@@ -2,7 +2,6 @@ plugins {
     id("java-library")
     id("org.jetbrains.kotlin.jvm")
     id("maven-publish")
-//    kotlin("kapt")
 }
 
 java {
@@ -12,14 +11,6 @@ java {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    // compileOnly(project(":DecoradorLib"))
-    // implementation(project(path = ":NullOutLib"))
-
-    // implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    // implementation("com.squareup:kotlinpoet:1.11.0")
-    // implementation("com.google.auto.service:auto-service:1.0-rc4")
-    // kapt("com.google.auto.service:auto-service:1.0-rc4")
-    // implementation(kotlin("stdlib-jdk8"))
 }
 
 publishing {
