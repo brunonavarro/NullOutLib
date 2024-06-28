@@ -8,7 +8,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.brunonavarro.nullout"
+        applicationId = "com.bruno.daniel.navarro.nunez.nullout"
         minSdk = 16
         targetSdk = 33
         versionCode = 1
