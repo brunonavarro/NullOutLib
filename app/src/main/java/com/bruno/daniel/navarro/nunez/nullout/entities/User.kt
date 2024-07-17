@@ -8,7 +8,7 @@ import com.bruno.daniel.navarro.nunez.nulloutlib.procesador.util.WithDefault
 
 
 @NullOutEntity
-data class User(
+class User(
     val username: String? = null,
     val password: String? = null
 ): WithDefault
