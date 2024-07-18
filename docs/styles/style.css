@@ -10,6 +10,7 @@ body {
 }
 
 .code-container {
+    position: relative;
     background-color: #282c34;
     padding: 20px;
     border-radius: 10px;
@@ -17,6 +18,23 @@ body {
     overflow: auto;
     max-width: 90%;
     max-height: 80vh;
+}
+
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #61dafb;
+    color: #282c34;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.copy-button:hover {
+    background-color: #21a1f1;
 }
 
 pre {
@@ -28,6 +46,23 @@ code {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     color: #f8f8f2;
+    position: relative;
+    padding-left: 3.8em; /* espacio para los números de línea */
+}
+
+.line-numbers {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 10px;
+    border-right: 1px solid #555;
+    color: #888;
+    pointer-events: none;
+    text-align: right;
+}
+
+.line-numbers div {
+    line-height: 1.5;
 }
 
 /* Personaliza los colores para Kotlin */
