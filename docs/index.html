@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Documentación NullOut</title>
     <style>
         body {
@@ -149,6 +150,17 @@
                 <section id="primitive">
                     <h3>Funciones notNull para variables primitivas:</h3>
                     <p>Las variables primitivas admitidas son: (String, Int, Double, Boolean)</p>
+
+                    <div class="code-container">
+                        <pre><code id="code" class="kotlin">
+                        fun main() {
+                            println("¡Hola, mundo!")
+                            val nombre = "Kotlin"
+                            println("Estoy aprendiendo $nombre")
+                        }
+                        </code></pre>
+                    </div>
+
                     <div>
                         <pre>
                             <code lang="language-kotlin">
@@ -341,5 +353,8 @@
     <footer>
         <p>&copy; 2024 NullOutLib. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="highlight.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

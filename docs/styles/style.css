@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.code-container {
+    background-color: #282c34;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+    max-width: 90%;
+    max-height: 80vh;
+}
+
+pre {
+    margin: 0;
+    overflow: auto;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    color: #f8f8f2;
+}
+
+.token.keyword { color: #c5a5c5; }
+.token.function { color: #79b6f2; }
+.token.string { color: #98c379; }
+.token.comment { color: #5c6370; }
+.token.operator { color: #56b6c2; }
+.token.punctuation { color: #abb2bf; }
