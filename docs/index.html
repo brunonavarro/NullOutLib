@@ -6,22 +6,52 @@
     <title>Documentación del Proyecto</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
+            background-color: #4285f4;
+            color: white;
+            padding: 1rem;
             text-align: center;
         }
         .container {
-            padding: 2rem;
+            display: flex;
+            margin: 20px;
+        }
+        nav {
+            width: 250px;
+            background: white;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+        nav ul li a {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-left: 20px;
         }
         h1, h2, h3 {
-            color: #333;
+            color: #4285f4;
         }
         pre {
             background: #f4f4f4;
@@ -36,7 +66,14 @@
             border-radius: 3px;
         }
         a {
-            color: #007bff;
+            color: #4285f4;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #4285f4;
+            color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -45,44 +82,58 @@
         <h1>Documentación del Proyecto</h1>
     </header>
     <div class="container">
-        <section>
-            <h2>Descripción</h2>
-            <p>Una breve descripción del proyecto y su propósito.</p>
-        </section>
+        <nav>
+            <ul>
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#instalacion">Instalación</a></li>
+                <li><a href="#uso">Uso</a></li>
+                <li><a href="#contribuciones">Contribuciones</a></li>
+                <li><a href="#licencia">Licencia</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section id="descripcion">
+                <h2>Descripción</h2>
+                <p>Una breve descripción del proyecto y su propósito.</p>
+            </section>
 
-        <section>
-            <h2>Instalación</h2>
-            <p>Pasos para instalar y configurar el proyecto.</p>
-            <pre><code>git clone https://github.com/usuario/nombre-del-proyecto.git
+            <section id="instalacion">
+                <h2>Instalación</h2>
+                <p>Pasos para instalar y configurar el proyecto.</p>
+                <pre><code>git clone https://github.com/usuario/nombre-del-proyecto.git
 cd nombre-del-proyecto
 npm install
 npm start</code></pre>
-        </section>
+            </section>
 
-        <section>
-            <h2>Uso</h2>
-            <p>Instrucciones sobre cómo utilizar el proyecto.</p>
-            <pre><code>// Ejemplo de uso
+            <section id="uso">
+                <h2>Uso</h2>
+                <p>Instrucciones sobre cómo utilizar el proyecto.</p>
+                <pre><code>// Ejemplo de uso
 const resultado = proyecto.metodo();
 console.log(resultado);</code></pre>
-        </section>
+            </section>
 
-        <section>
-            <h2>Contribuciones</h2>
-            <p>Guía para contribuir al proyecto.</p>
-            <ul>
-                <li>Haz un fork del proyecto</li>
-                <li>Crea una nueva rama (<code>git checkout -b feature-nueva</code>)</li>
-                <li>Realiza tus cambios y haz commits (<code>git commit -m 'Añadir nueva característica'</code>)</li>
-                <li>Haz push a la rama (<code>git push origin feature-nueva</code>)</li>
-                <li>Abre un Pull Request</li>
-            </ul>
-        </section>
+            <section id="contribuciones">
+                <h2>Contribuciones</h2>
+                <p>Guía para contribuir al proyecto.</p>
+                <ul>
+                    <li>Haz un fork del proyecto</li>
+                    <li>Crea una nueva rama (<code>git checkout -b feature-nueva</code>)</li>
+                    <li>Realiza tus cambios y haz commits (<code>git commit -m 'Añadir nueva característica'</code>)</li>
+                    <li>Haz push a la rama (<code>git push origin feature-nueva</code>)</li>
+                    <li>Abre un Pull Request</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>Licencia</h2>
-            <p>Información sobre la licencia del proyecto.</p>
-        </section>
+            <section id="licencia">
+                <h2>Licencia</h2>
+                <p>Información sobre la licencia del proyecto.</p>
+            </section>
+        </div>
     </div>
+    <footer>
+        <p>&copy; 2024 Tu Nombre o Proyecto. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
