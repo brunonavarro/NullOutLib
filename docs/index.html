@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
-    <link rel="stylesheet" href="styles/style.css">
     <title>Documentación NullOut</title>
+    <script>
+        
+    </script>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -18,23 +19,27 @@
             background-color: #4285f4;
             color: white;
             padding: 1rem;
-            text-align: center;
+            text-align: start;
         }
         .container {
             display: flex;
-            margin: 20px;
+            justify-content: center;
         }
         nav {
+            top: 0;
+            position: sticky;
             width: 250px;
+            height: 100vh;
             background: white;
             padding: 20px;
-            border-right: 1px solid #ddd;
+            border-right: 5px solid #4285f4;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         nav ul {
             list-style-type: none;
             padding: 0;
         }
-        nav ul li {
+        ul li {
             margin-bottom: 10px;
         }
         nav ul li a {
@@ -45,6 +50,7 @@
             text-decoration: underline;
         }
         .content {
+            margin: 20px;
             flex: 1;
             background: white;
             padding: 20px;
@@ -52,7 +58,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-left: 20px;
         }
-        h1, h2, h3 {
+        h2, h3 {
             color: #4285f4;
         }
         pre {
@@ -75,7 +81,6 @@
             padding: 1rem;
             background: #4285f4;
             color: white;
-            margin-top: 20px;
         }
         .kotlin-code {
             background-color: #f6f8fa;
@@ -86,15 +91,21 @@
             font-size: 14px;
             overflow: auto;
         }
+
+        h1 {
+            margin-left: 1cm;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Documentación NllOut</h1>
+        <h1>Documentación NullOut</h1>
     </header>
     <div class="container">
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <ul class="navbar-ul">
                 <li><a href="#descripcion">Descripción</a></li>
                 <li><a href="#instalacion">Instalación</a></li>
                 <li><a href="#uso">Uso</a></li>
@@ -151,26 +162,15 @@
                 <section id="primitive">
                     <h3>Funciones notNull para variables primitivas:</h3>
                     <p>Las variables primitivas admitidas son: (String, Int, Double, Boolean)</p>
-
-                    <div class="code-container">
-                        <pre><code id="code" class="kotlin">
-                        fun main() {
-                            println("¡Hola, mundo!")
-                            val nombre = "Kotlin"
-                            println("Estoy aprendiendo $nombre")
-                        }
-                        </code></pre>
-                    </div>
-
-                    <div>
+                    <div class="kotlin-code">
                         <pre>
-                            <code lang="language-kotlin">
+<!--                            <code>-->
                                 fun String?.getOrDefault(value: String? = null): String
                                 fun Int?.getOrDefault(value: Int? = null): Int
                                 fun Double?.getOrDefault(value: Double? = null): Double
                                 fun Boolean?.getOrDefault(value: Boolean? = null): Boolean
                                 fun Number?.getOrDefault(value: Number? = null): Boolean
-                            </code>
+<!--                            </code>-->
                         </pre>
                     </div>
                     <p>
@@ -354,8 +354,5 @@
     <footer>
         <p>&copy; 2024 NullOutLib. Todos los derechos reservados.</p>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-    <script src="styles/script.js"></script>
 </body>
 </html>
