@@ -1,1 +1,88 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación del Proyecto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        .container {
+            padding: 2rem;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        a {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Documentación del Proyecto</h1>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Descripción</h2>
+            <p>Una breve descripción del proyecto y su propósito.</p>
+        </section>
+
+        <section>
+            <h2>Instalación</h2>
+            <p>Pasos para instalar y configurar el proyecto.</p>
+            <pre><code>git clone https://github.com/usuario/nombre-del-proyecto.git
+cd nombre-del-proyecto
+npm install
+npm start</code></pre>
+        </section>
+
+        <section>
+            <h2>Uso</h2>
+            <p>Instrucciones sobre cómo utilizar el proyecto.</p>
+            <pre><code>// Ejemplo de uso
+const resultado = proyecto.metodo();
+console.log(resultado);</code></pre>
+        </section>
+
+        <section>
+            <h2>Contribuciones</h2>
+            <p>Guía para contribuir al proyecto.</p>
+            <ul>
+                <li>Haz un fork del proyecto</li>
+                <li>Crea una nueva rama (<code>git checkout -b feature-nueva</code>)</li>
+                <li>Realiza tus cambios y haz commits (<code>git commit -m 'Añadir nueva característica'</code>)</li>
+                <li>Haz push a la rama (<code>git push origin feature-nueva</code>)</li>
+                <li>Abre un Pull Request</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Licencia</h2>
+            <p>Información sobre la licencia del proyecto.</p>
+        </section>
+    </div>
+</body>
+</html>
