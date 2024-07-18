@@ -75,6 +75,15 @@
             color: white;
             margin-top: 20px;
         }
+        .kotlin-code {
+            background-color: #f6f8fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 16px;
+            font-family: monospace;
+            font-size: 14px;
+            overflow: auto;
+        }
     </style>
 </head>
 <body>
@@ -140,15 +149,17 @@
                 <section id="primitive">
                     <h3>Funciones notNull para variables primitivas:</h3>
                     <p>Las variables primitivas admitidas son: (String, Int, Double, Boolean)</p>
-                    <pre>
-                        <code>
-                            fun String?.getOrDefault(value: String? = null): String
-                            fun Int?.getOrDefault(value: Int? = null): Int
-                            fun Double?.getOrDefault(value: Double? = null): Double
-                            fun Boolean?.getOrDefault(value: Boolean? = null): Boolean
-                            fun Number?.getOrDefault(value: Number? = null): Boolean
-                        </code>
-                    </pre>
+                    <div class="kotlin-code">
+                        <pre>
+<!--                            <code>-->
+                                fun String?.getOrDefault(value: String? = null): String
+                                fun Int?.getOrDefault(value: Int? = null): Int
+                                fun Double?.getOrDefault(value: Double? = null): Double
+                                fun Boolean?.getOrDefault(value: Boolean? = null): Boolean
+                                fun Number?.getOrDefault(value: Number? = null): Boolean
+<!--                            </code>-->
+                        </pre>
+                    </div>
                     <p>
                         Todas estas funciones se encargan de recibir el valor real del atributo y
                         en caso de ser null devuelve un valor por defecto,
