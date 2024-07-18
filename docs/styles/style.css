@@ -30,9 +30,10 @@ code {
     color: #f8f8f2;
 }
 
-.token.keyword { color: #c5a5c5; }
-.token.function { color: #79b6f2; }
-.token.string { color: #98c379; }
-.token.comment { color: #5c6370; }
-.token.operator { color: #56b6c2; }
-.token.punctuation { color: #abb2bf; }
+/* Personaliza los colores para Kotlin */
+.hljs-keyword { color: #c5a5c5; }
+.hljs-function { color: #79b6f2; }
+.hljs-string { color: #98c379; }
+.hljs-comment { color: #5c6370; }
+.hljs-operator { color: #56b6c2; }
+.hljs-punctuation { color: #abb2bf; }
