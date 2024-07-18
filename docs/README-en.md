@@ -1,4 +1,4 @@
-# NullOut -> Una biblioteca Kotlin para minimizar los nulos en el desarrollo de software
+# NullOut -> Una biblioteca Kotlin para minimizar los nulos en el desarrollo de software :pushpin:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![](https://jitpack.io/v/brunonavarro/NullOutLib.svg)](https://jitpack.io/#brunonavarro/NullOutLib)
@@ -10,10 +10,10 @@
 [![pull requests](https://img.shields.io/github/issues-pr/brunonavarro/NullOutLib?style=for-the-badge)](https://github.com/brunonavarro/NullOutLib/pulls)
 [![contributors](https://img.shields.io/github/contributors/brunonavarro/NullOutLib?style=for-the-badge)](https://github.com/brunonavarro/NullOutLib/graphs/contributors)
 
-## :loudspeaker: **We'd love to hear from you! Provide feedback [Here](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK%5D)** :loudspeaker:
+## :loudspeaker: **We'd love to hear from you! Provide feedback [Here](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK%5D)** :point_left: :loudspeaker:
 
 
-## :loudspeaker: **Access the Documentation [Here](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK% 5D)** :loudspeaker:
+## :blue_book: **Get started with NullOut - full docs [Here](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK% 5D)** :point_left: :blue_book:
 
 > [!warning]
 > These generic functions should not be implemented for attributes of data classes that at least do not initialize their attributes to null, for example:
@@ -49,7 +49,7 @@
 > ): WithDefault
 > ```
 
-## 👨‍💻 Quick start: 🚀🚀🚀
+## 👨‍💻 :pill: Quick start: :rocket: :rocket: :rocket:
 
 In project gradle add the following lines:
 
