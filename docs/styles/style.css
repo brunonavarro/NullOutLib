@@ -40,6 +40,7 @@ body {
 pre {
     margin: 0;
     overflow: auto;
+    counter-reset: line-numbering;
 }
 
 code {
@@ -47,22 +48,22 @@ code {
     font-size: 1rem;
     color: #f8f8f2;
     position: relative;
-    padding-left: 3.8em; /* espacio para los números de línea */
+    white-space: pre-wrap;
+    word-break: break-all;
+    padding-left: 3em; /* espacio para los números de línea */
 }
 
-.line-numbers {
+code::before {
+    content: counter(line-numbering);
+    counter-increment: line-numbering;
+    display: block;
+    text-align: right;
+    width: 2.5em;
     position: absolute;
     left: 0;
-    top: 0;
-    padding: 0 10px;
-    border-right: 1px solid #555;
     color: #888;
-    pointer-events: none;
-    text-align: right;
-}
-
-.line-numbers div {
-    line-height: 1.5;
+    border-right: 1px solid #555;
+    padding-right: 0.5em;
 }
 
 /* Personaliza los colores para Kotlin */

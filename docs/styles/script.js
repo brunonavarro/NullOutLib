@@ -6,17 +6,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function addLineNumbers(code) {
-    const lines = code.textContent.split('\n').length;
-    const lineNumbers = document.createElement('div');
-    lineNumbers.className = 'line-numbers';
-
-    for (let i = 1; i <= lines; i++) {
-        const lineNumber = document.createElement('div');
-        lineNumber.textContent = i;
-        lineNumbers.appendChild(lineNumber);
-    }
-
-    code.parentNode.insertBefore(lineNumbers, code);
+    const lines = code.innerHTML.split('\n');
+    code.innerHTML = lines.map((line, index) => {
+        return `<span class="line">${line}</span>`;
+    }).join('\n');
 }
 
 function copyToClipboard() {
