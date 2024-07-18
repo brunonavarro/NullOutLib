@@ -10,5 +10,73 @@
 [![pull requests](https://img.shields.io/github/issues-pr/brunonavarro/NullOutLib?style=for-the-badge)](https://github.com/brunonavarro/NullOutLib/pulls)
 [![contributors](https://img.shields.io/github/contributors/brunonavarro/NullOutLib?style=for-the-badge)](https://github.com/brunonavarro/NullOutLib/graphs/contributors)
 
-## :loudspeaker: **¡Nos encantaría conocer tu opinión! Proporciona feedback [Aquí](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK%5D)** :loudspeaker:
+## :loudspeaker: **We'd love to hear from you! Provide feedback [Here](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK%5D)** :loudspeaker:
 
+
+## :loudspeaker: **Access the Documentation [Here](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK% 5D)** :loudspeaker:
+
+> [!warning]
+> These generic functions should not be implemented for attributes of data classes that at least do not initialize their attributes to null, for example:
+>
+> ## 🟥 Not Compatible 🔴
+> ```kotlin
+> data class User(
+> val userName: String,
+> val password: String
+> )
+> ```
+> ## 🟩 Compatible 🟢
+> ```kotlin
+> data class User(
+> val userName: String? =null,
+> val password: String? =null
+> )
+> ```
+> ### The following interface must be implemented in all data classes:
+> ```kotlin
+> interface WithDefault
+> ```
+> ### In addition, the following annotation must be added as well:
+> ```kotlin
+> annotation NullOutEntity
+> ```
+> ### Resulting in the data class:
+> ```kotlin
+> @NullOutEntity
+> data class User(
+> val userName: String? =null,
+> val password: String? =null
+> ): WithDefault
+> ```
+
+## 👨‍💻 Quick start: 🚀🚀🚀
+
+In project gradle add the following lines:
+
+``gradle
+plugins {
+id("com.google.devtools.ksp") version "KotlinVersion-VersionKSP" apply false
+}
+
+buildscript {
+repositories {
+...
+maven(url = "https://jitpack.io")
+}
+...
+}
+```
+
+in app gradle add the following lines:
+
+``gradle
+plugins{
+  id("com.google.devtools.ksp")
+}
+...
+dependencies {
+  implementation("com.github.brunonavarro:DecoratorNullOut:1.0.0-beta5")
+  implementation("com.github.brunonavarro:NullOutLib:1.0.0-beta1")
+  ksp("com.github.brunonavarro:ProcessorNullOutLib:1.0.0-beta2")
+}
+```
