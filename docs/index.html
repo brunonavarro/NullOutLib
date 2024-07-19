@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,17 +15,18 @@
 
     </script>
     <style>
-
         header {
             background-color: #4285f4;
             color: white;
             padding: 1rem;
             text-align: start;
         }
+
         .container {
             display: flex;
             justify-content: center;
         }
+
         nav {
             top: 0;
             position: sticky;
@@ -33,34 +35,42 @@
             background: white;
             padding: 20px;
             border-right: 5px solid #4285f4;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
         }
+
         ul li {
             margin-bottom: 10px;
         }
+
         nav ul li a {
             color: #4285f4;
             text-decoration: none;
         }
+
         nav ul li a:hover {
             text-decoration: underline;
         }
+
         .content {
             margin: 20px;
             flex: 1;
             background: white;
             padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin-left: 20px;
         }
-        h2, h3 {
+
+        h2,
+        h3 {
             color: #4285f4;
         }
+
         /*pre {
             background: #f4f4f4;
             padding: 1rem;
@@ -76,12 +86,14 @@
         a {
             color: #4285f4;
         }
+
         footer {
             text-align: center;
             padding: 1rem;
             background: #4285f4;
             color: white;
         }
+
         .kotlin-code {
             background-color: #f6f8fa;
             border: 1px solid #ddd;
@@ -99,47 +111,53 @@
         }
     </style>
 </head>
-<body>
-<header>
-    <h1>Documentación NullOut</h1>
-</header>
-<div class="container">
-    <nav class="navbar">
-        <ul class="navbar-ul">
-            <li><a href="#descripcion">Descripción</a></li>
-            <li><a href="#instalacion">Instalación</a></li>
-            <li><a href="#uso">Uso</a></li>
-            <li><a href="#references">Referencias</a></li>
-            <ul>
-                <li><a href="#primitive">Funciones notNull para variables primitivas</a></li>
-                <li><a href="#pairMap">Funciones notNull para variables Pair o Map</a></li>
-                <li><a href="#object">Funciones notNull para variables objetos</a></li>
-                <li><a href="#array">Funciones notNull para variables array</a></li>
-                <li><a href="#arrayList">Funciones notNull para variables arrayList</a></li>
-                <li><a href="#list">Funciones notNull para variables List</a></li>
-                <li><a href="#mutableList">Funciones notNull para variables MutableList</a></li>
-                <li><a href="#firstOrDefaultList">Funcion firsOrDefault para listas</a></li>
-                <li><a href="#filterOrDefaultList">Funcion filterOrDefault para listas</a></li>
-                <li><a href="#flagMapOrDefaultList">Funcion flagMapOrDefault para listas</a></li>
-            </ul>
-            <li><a href="#contribuciones">Contribuciones</a></li>
-            <li><a href="#licencia">Licencia</a></li>
-        </ul>
-    </nav>
-    <div class="content">
-        <section id="descripcion">
-            <h2>Descripción</h2>
-            <p>NullOut es una librería de software que brinda como solucion una alternativa para eliminar los nulos en proyectos que se encuentran en produccion y en los cuales la opcion de eliminar los nulls desde la raiz, es decir desde la capa de Modelo, es mas tedioso y requiere alto consumo de recurso de mano de obra o dependencia con otros equipos. NullOut está enfocado en eliminar las ramas condicionales ocaciondas por el operador ternario “?” en Kotlin, dentro del analisis de cobertura de la herramienta SonarQube.</p>
-        </section>
 
-        <section id="instalacion">
-            <h2>Instalación</h2>
-            <p>Pasos para instalar y configurar el proyecto.</p>
-            <p>En gradle de proyecto agregar las siguientes lineas:</p>
-            <div class="code-container">
-                <pre><code >
-plugins {
-   id("com.google.devtools.ksp") version "KotlinVersion-VersionKSP" apply false
+<body>
+    <header>
+        <h1>Documentación NullOut</h1>
+    </header>
+    <div class="container">
+        <nav class="navbar">
+            <ul class="navbar-ul">
+                <li><a href="#descripcion">Descripción</a></li>
+                <li><a href="#instalacion">Instalación</a></li>
+                <li><a href="#uso">Uso</a></li>
+                <li><a href="#references">Referencias</a></li>
+                <ul>
+                    <li><a href="#primitive">Funciones notNull para variables primitivas</a></li>
+                    <li><a href="#pairMap">Funciones notNull para variables Pair o Map</a></li>
+                    <li><a href="#object">Funciones notNull para variables objetos</a></li>
+                    <li><a href="#array">Funciones notNull para variables array</a></li>
+                    <li><a href="#arrayList">Funciones notNull para variables arrayList</a></li>
+                    <li><a href="#list">Funciones notNull para variables List</a></li>
+                    <li><a href="#mutableList">Funciones notNull para variables MutableList</a></li>
+                    <li><a href="#firstOrDefaultList">Funcion firsOrDefault para listas</a></li>
+                    <li><a href="#filterOrDefaultList">Funcion filterOrDefault para listas</a></li>
+                    <li><a href="#flagMapOrDefaultList">Funcion flagMapOrDefault para listas</a></li>
+                </ul>
+                <li><a href="#contribuciones">Contribuciones</a></li>
+                <li><a href="#licencia">Licencia</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section id="descripcion">
+                <h2>Descripción</h2>
+                <p>NullOut es una librería de software que brinda como solucion una alternativa para eliminar los nulos
+                    en proyectos que se encuentran en produccion y en los cuales la opcion de eliminar los nulls desde
+                    la raiz, es decir desde la capa de Modelo, es mas tedioso y requiere alto consumo de recurso de mano
+                    de obra o dependencia con otros equipos. NullOut está enfocado en eliminar las ramas condicionales
+                    ocaciondas por el operador ternario “?” en Kotlin, dentro del analisis de cobertura de la
+                    herramienta SonarQube.</p>
+            </section>
+
+            <section id="instalacion">
+                <h2>Instalación</h2>
+                <p>Pasos para instalar y configurar el proyecto.</p>
+                <p>En gradle de proyecto agregar las siguientes lineas:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code>plugins {
+id("com.google.devtools.ksp") version "KotlinVersion-VersionKSP" apply false
 }
 
 buildscript {
@@ -151,10 +169,11 @@ buildscript {
 }
                     </code>
                 </pre>
-            </div>
-            <p>en gradle de app agregar las siguientes lineas:</p>
-            <div class="code-container">
-                <pre><code >
+                </div>
+                <p>en gradle de app agregar las siguientes lineas:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code>
 plugins{
 	id("com.google.devtools.ksp")
 }
@@ -166,55 +185,61 @@ dependecies {
 }
                     </code>
                 </pre>
-            </div>
-        </section>
+                </div>
+            </section>
 
-        <section id="uso">
-            <h2>Uso</h2>
-            <p>Instrucciones sobre cómo utilizar el proyecto.</p>
-            <p>No se debe implementar estas funciones genericas para atributos de data clases que almenos no inicializan sus atributos en null por ejemplo:</p>
+            <section id="uso">
+                <h2>Uso</h2>
+                <p>Instrucciones sobre cómo utilizar el proyecto.</p>
+                <p>No se debe implementar estas funciones genericas para atributos de data clases que almenos no
+                    inicializan sus atributos en null por ejemplo:</p>
 
-            <h4 class="incompatible">No Compatible</h4>
-            <div class="code-container">
-                <pre><code >
+                <h4 class="incompatible">No Compatible</h4>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
 data class User(
    val userName: String,
    val password: String
 )
                     </code>
                 </pre>
-            </div>
+                </div>
 
-            <h4 class="compatible">Compatible</h4>
-            <div class="code-container">
-                <pre><code >
+                <h4 class="compatible">Compatible</h4>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
 data class User(
    val userName: String? = null,
    val password: String? = null
 )
                     </code>
                 </pre>
-            </div>
+                </div>
 
-            <p>En todas las data class debe implementarse la siguiente interfaz:</p>
-            <div class="code-container">
-                <pre><code >
+                <p>En todas las data class debe implementarse la siguiente interfaz:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
 interface WithDefault
                     </code>
                 </pre>
-            </div>
+                </div>
 
-            <p>Ademas se debe agregar la siguiente anotacion tambien:</p>
-            <div class="code-container">
-                <pre><code >
+                <p>Ademas se debe agregar la siguiente anotacion tambien:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
 annotation NullOutEntity
                     </code>
                 </pre>
-            </div>
+                </div>
 
-            <p>Teniendo como resultado en las data class:</p>
-            <div class="code-container">
-                <pre><code >
+                <p>Teniendo como resultado en las data class:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
 @NullOutEntity
 data class User(
    val userName: String? = null,
@@ -222,39 +247,41 @@ data class User(
 ): WithDefault
                     </code>
                 </pre>
-            </div>
-        </section>
+                </div>
+            </section>
 
-        <section id="references">
-            <h2>Referencias funcionales</h2>
-            <section id="primitive">
-                <h3>Funciones notNull para variables primitivas:</h3>
-                <p>Las variables primitivas admitidas son: (String, Int, Double, Boolean)</p>
-                <div class="code-container">
-                        <pre><code >fun String?.getOrDefault(value: String? = null): String
+            <section id="references">
+                <h2>Referencias funcionales</h2>
+                <section id="primitive">
+                    <h3>Funciones notNull para variables primitivas:</h3>
+                    <p>Las variables primitivas admitidas son: (String, Int, Double, Boolean)</p>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun String?.getOrDefault(value: String? = null): String
 fun Int?.getOrDefault(value: Int? = null): Int
 fun Double?.getOrDefault(value: Double? = null): Double
 fun Boolean?.getOrDefault(value: Boolean? = null): Boolean
 fun Number?.getOrDefault(value: Number? = null): Boolean</code>
                         </pre>
-                </div>
-                <p>
-                    Todas estas funciones se encargan de recibir el valor real del atributo y
-                    en caso de ser null devuelve un valor por defecto,
-                    el cual puede ser indicado o en su defecto serian:
-                </p><br>
-                <p>
-                    String -> “”
-                    Double -> 0.0
-                    Int -> 0
-                    Boolean -> false
-                </p>
-            </section>
-            <section id="pairMap">
-                <h3>Funciones notNull para variables Pair o Map:</h3>
-                <p>Las variables primitivas admitidas son: (String, Int, Double, Boolean)</p>
-                <div class="code-container">
-                        <pre><code >fun <reified A, reified B> Pair<A, B>?.getPairOrDefault(default: Pair<A, B>? = null): Pair<A, B> where A: WithDefault, B: WithDefault
+                    </div>
+                    <p>
+                        Todas estas funciones se encargan de recibir el valor real del atributo y
+                        en caso de ser null devuelve un valor por defecto,
+                        el cual puede ser indicado o en su defecto serian:
+                    </p><br>
+                    <p>
+                        String -> “”
+                        Double -> 0.0
+                        Int -> 0
+                        Boolean -> false
+                    </p>
+                </section>
+                <section id="pairMap">
+                    <h3>Funciones notNull para variables Pair o Map:</h3>
+                    <p>Las variables primitivas admitidas son: (String, Int, Double, Boolean)</p>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified A, reified B> Pair<A, B>?.getPairOrDefault(default: Pair<A, B>? = null): Pair<A, B> where A: WithDefault, B: WithDefault
 fun <reified A, reified B> Pair<A, B>?.getPairOrDefault(default: Pair<A, B>? = null): Pair<A, B> where B : Any, A : Any
 fun <reified A, reified B> Pair<A, B?>?.getPairOrDefault(default: Pair<A, B?>? = null): Pair<A, B> where A: WithDefault, B: WithDefault
 fun <reified A, reified B> Pair<A, B?>?.getPairOrDefault(default: Pair<A, B?>? = null): Pair<A, B> where A : Any, B : Any
@@ -269,104 +296,110 @@ fun <reified K: Any, reified V: Any> Map<K?, V?>?.getMapOrDefault(default: Map<K
 fun <reified K, reified V> Map<K?, V?>?.getMapOrDefault(default: Map<K?, V?>? = null): Map<K, V> where K: WithDefault, V: WithDefault
                             </code>
                         </pre>
-                </div>
-                <p>
-                    Todas estas funciones se encargan de recibir el valor real del atributo y
-                    en caso de que alguno sea null devuelve un valor por defecto,
-                    el cual puede ser indicado o en su defecto se crea una intancia de acuerdo al tipo de variable.
-                </p>
-            </section>
-            <section id="object">
-                <h3>Funciones notNull para variables objetos:</h3>
-                <div class="code-container">
-                        <pre><code >fun <reified T> T?.getOrDefault(): T where T: WithDefault
+                    </div>
+                    <p>
+                        Todas estas funciones se encargan de recibir el valor real del atributo y
+                        en caso de que alguno sea null devuelve un valor por defecto,
+                        el cual puede ser indicado o en su defecto se crea una intancia de acuerdo al tipo de variable.
+                    </p>
+                </section>
+                <section id="object">
+                    <h3>Funciones notNull para variables objetos:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> T?.getOrDefault(): T where T: WithDefault
 fun <reified T> T?.getOrDefault(): T where T: Any
                             </code>
                         </pre>
-                </div>
-                <p>
-                    Todas estas funciones se encargan de recibir el valor real del atributo y
-                    en caso sea null devuelve un valor por defecto,
-                    para el cual se crea una intancia de acuerdo al tipo de variable.
-                </p>
-            </section>
-            <section id="array">
-                <h3>Funciones notNull para variables array:</h3>
-                <div class="code-container">
-                        <pre><code >fun <reified T> Array<T>?.getArrayOrDefault(): Array<T> where T : WithDefault
+                    </div>
+                    <p>
+                        Todas estas funciones se encargan de recibir el valor real del atributo y
+                        en caso sea null devuelve un valor por defecto,
+                        para el cual se crea una intancia de acuerdo al tipo de variable.
+                    </p>
+                </section>
+                <section id="array">
+                    <h3>Funciones notNull para variables array:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> Array<T>?.getArrayOrDefault(): Array<T> where T : WithDefault
 fun <reified T> Array<T>?.getArrayOrDefault(): Array<T> where T: Any
 fun <reified T> Array<T?>?.getArrayOrDefault(default: Array<T?> = arrayOf()): Array<T> where T : WithDefault
 fun <reified T> Array<T?>?.getArrayOrDefault(default: Array<T?> = arrayOf()): Array<T> where T: Any
                             </code>
                         </pre>
-                </div>
-                <p>
-                    Todas estas funciones se encargan de recibir el valor real del atributo y
-                    en caso sea null devuelve un valor por defecto, para el cual se crea un array vacio.
-                </p>
-            </section>
-            <section id="arrayList">
-                <h3>Funciones notNull para variables arrayList:</h3>
-                <div class="code-container">
-                        <pre><code >fun <reified T> ArrayList<T>?.getArrayListOrDefault(default: ArrayList<T>? = null): ArrayList<T> where T : WithDefault
+                    </div>
+                    <p>
+                        Todas estas funciones se encargan de recibir el valor real del atributo y
+                        en caso sea null devuelve un valor por defecto, para el cual se crea un array vacio.
+                    </p>
+                </section>
+                <section id="arrayList">
+                    <h3>Funciones notNull para variables arrayList:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> ArrayList<T>?.getArrayListOrDefault(default: ArrayList<T>? = null): ArrayList<T> where T : WithDefault
 fun <reified T> ArrayList<T>?.getArrayListOrDefault(default: ArrayList<T>? = null): ArrayList<T> where T : Any
 fun <reified T> ArrayList<T?>?.getArrayListOrDefault(default: ArrayList<T?> = arrayListOf()): ArrayList<T> where T : WithDefault
 fun <reified T> ArrayList<T?>?.getArrayListOrDefault(default: ArrayList<T?> = arrayListOf()): ArrayList<T> where T : Any
                             </code>
                         </pre>
-                </div>
-                <p>
-                    Todas estas funciones se encargan de recibir el valor real del atributo y
-                    en caso sea null devuelve un valor por defecto, para el cual se crea un arrayList vacio.
-                </p>
-            </section>
-            <section id="list">
-                <h3>Funciones notNull para variables List:</h3>
-                <div class="code-container">
-                        <pre><code >fun <reified T> List<T>?.getListOrDefault(default: List<T> = emptyList()): List<T> where T : WithDefault
+                    </div>
+                    <p>
+                        Todas estas funciones se encargan de recibir el valor real del atributo y
+                        en caso sea null devuelve un valor por defecto, para el cual se crea un arrayList vacio.
+                    </p>
+                </section>
+                <section id="list">
+                    <h3>Funciones notNull para variables List:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> List<T>?.getListOrDefault(default: List<T> = emptyList()): List<T> where T : WithDefault
 fun <reified T> List<T?>?.getListOrDefault(default: List<T?> = emptyList()): List<T> where T : WithDefault
 fun <reified T> List<T>?.getListOrDefault(default: List<T> = emptyList()): List<T> where T : Any
 fun <reified T> List<T?>?.getListOrDefault(default: List<T?> = emptyList()): List<T> where T : Any
                             </code>
                         </pre>
-                </div>
-                <p>
-                    Todas estas funciones se encargan de recibir el valor real del atributo y
-                    en caso sea null devuelve un valor por defecto, para el cual se crea un List vacio.
-                </p>
-            </section>
-            <section id="mutableList">
-                <h3>Funciones notNull para variables MutableList:</h3>
-                <div class="code-container">
-                        <pre><code >fun <reified T> MutableList<T>?.getMutableListOrDefault(default: MutableList<T> = mutableListOf()): MutableList<T> where T : WithDefault
+                    </div>
+                    <p>
+                        Todas estas funciones se encargan de recibir el valor real del atributo y
+                        en caso sea null devuelve un valor por defecto, para el cual se crea un List vacio.
+                    </p>
+                </section>
+                <section id="mutableList">
+                    <h3>Funciones notNull para variables MutableList:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> MutableList<T>?.getMutableListOrDefault(default: MutableList<T> = mutableListOf()): MutableList<T> where T : WithDefault
 fun <reified T> MutableList<T>?.getMutableListOrDefault(default: MutableList<T> = mutableListOf()): MutableList<T> where T : Any
 fun <reified T> MutableList<T?>?.getMutableListOrDefault(default: MutableList<T?> = mutableListOf()): MutableList<T> where T : WithDefault
 fun <reified T> MutableList<T?>?.getMutableListOrDefault(default: MutableList<T?> = mutableListOf()): MutableList<T> where T : Any
                             </code>
                         </pre>
-                </div>
-                <p>
-                    Todas estas funciones se encargan de recibir el valor real del atributo y
-                    en caso sea null devuelve un valor por defecto, para el cual se crea un mutableList vacio.
-                </p>
+                    </div>
+                    <p>
+                        Todas estas funciones se encargan de recibir el valor real del atributo y
+                        en caso sea null devuelve un valor por defecto, para el cual se crea un mutableList vacio.
+                    </p>
+                </section>
             </section>
-        </section>
 
-        <section id="contribuciones">
-            <h2>Contribuciones</h2>
-            <p>Guía para contribuir al proyecto.</p>
-            <ul>
-                <li>Haz un fork del proyecto</li>
-                <li>Crea una nueva rama (<code>git checkout -b feature-nueva</code>)</li>
-                <li>Realiza tus cambios y haz commits (<code>git commit -m 'Añadir nueva característica'</code>)</li>
-                <li>Haz push a la rama (<code>git push origin feature-nueva</code>)</li>
-                <li>Abre un Pull Request</li>
-            </ul>
-        </section>
+            <section id="contribuciones">
+                <h2>Contribuciones</h2>
+                <p>Guía para contribuir al proyecto.</p>
+                <ul>
+                    <li>Haz un fork del proyecto</li>
+                    <li>Crea una nueva rama (<code onclick="copyToClipboard(event)"> git checkout -b feature-nueva </code>)</li>
+                    <li>Realiza tus cambios y haz commits (<code onclick="copyToClipboard(event)"> git commit -m 'Añadir nueva característica' </code>)
+                    </li>
+                    <li>Haz push a la rama (<code onclick="copyToClipboard(event)"> git push origin feature-nueva </code>)</li>
+                    <li>Abre un Pull Request</li>
+                </ul>
+            </section>
 
-        <section id="licencia">
-            <h2>Licencia</h2>
-            <pre>
+            <section id="licencia">
+                <h2>Licencia</h2>
+                <pre>
                 MIT License
 
                 Copyright (c) 2024 Bruno Navarro
@@ -388,19 +421,20 @@ fun <reified T> MutableList<T?>?.getMutableListOrDefault(default: MutableList<T?
                 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
                 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                 SOFTWARE.</pre>
-        </section>
+            </section>
+        </div>
     </div>
-</div>
-<footer>
-    <p>&copy; 2024 NullOutLib. Todos los derechos reservados.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 NullOutLib. Todos los derechos reservados.</p>
+    </footer>
 
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-kotlin.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-kotlin.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
-<script src="styles/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="styles/script.js"></script>
 </body>
+
 </html>
