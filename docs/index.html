@@ -172,13 +172,57 @@ dependecies {
         <section id="uso">
             <h2>Uso</h2>
             <p>Instrucciones sobre cómo utilizar el proyecto.</p>
-            <pre>
-                    <code>
-                        // Ejemplo de uso
-                        const resultado = proyecto.metodo();
-                        console.log(resultado);
+            <p>No se debe implementar estas funciones genericas para atributos de data clases que almenos no inicializan sus atributos en null por ejemplo:</p>
+
+            <h3>No Compatible</h3>
+            <div class="code-container">
+                <pre><code >
+data class User(
+   val userName: String,
+   val password: String
+)
                     </code>
                 </pre>
+            </div>
+
+            <h3>Compatible</h3>
+            <div class="code-container">
+                <pre><code >
+data class User(
+   val userName: String? = null,
+   val password: String? = null
+)
+                    </code>
+                </pre>
+            </div>
+
+            <p>En todas las data class debe implementarse la siguiente interfaz:</p>
+            <div class="code-container">
+                <pre><code >
+interface WithDefault
+                    </code>
+                </pre>
+            </div>
+
+            <p>Ademas se debe agregar la siguiente anotacion tambien:</p>
+            <div class="code-container">
+                <pre><code >
+annotation NullOutEntity
+                    </code>
+                </pre>
+            </div>
+
+            <p>Teniendo como resultado en las data class:</p>
+            <div class="code-container">
+                <pre><code >
+@NullOutEntity
+data class User(
+   val userName: String? = null,
+   val password: String? = null
+): WithDefault
+                    </code>
+                </pre>
+            </div>
         </section>
 
         <section id="references">
