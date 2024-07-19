@@ -13,7 +13,7 @@
 ## :loudspeaker: **We'd love to hear from you! Provide feedback [Here](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK%5D)** :point_left: :loudspeaker:
 
 
-## :blue_book: **Get started with NullOut - full docs [Here](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK% 5D)** :point_left: :blue_book:
+## :blue_book: **Get started with NullOut - full docs [Here](https://brunonavarro.github.io/NullOutLib/docs/)** :point_left: :blue_book:
 
 > [!warning]
 > These generic functions should not be implemented for attributes of data classes that at least do not initialize their attributes to null, for example:

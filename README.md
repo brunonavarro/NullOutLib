@@ -12,6 +12,11 @@
 
 ## :loudspeaker: **¡Nos encantaría conocer tu opinión! Proporciona feedback [Aquí](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK%5D)** :loudspeaker:
 
+### Accede a la documentacion en Español: [Guia de Inicio Rapido](https://github.com/brunonavarro/NullOutLib/blob/master/docs/README-es.md)
+
+### Access the documentation in English: [Quick Start Guide](https://github.com/brunonavarro/NullOutLib/blob/master/docs/README-en.md)
+
+---
 
 ### Objetivos:
 

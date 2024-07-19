@@ -13,7 +13,7 @@
 ## :loudspeaker: **¡Nos encantaría conocer tu opinión! Proporciona feedback [Aquí](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK%5D)** :point_left: :loudspeaker:
 
 
-## :blue_book: **Comience con NullOut: documentos completos [Aquí](https://github.com/brunonavarro/NullOutLib/issues/new?assignees=brunonavarro&labels=feedback&projects=&template=feedback-libreria-NullOutLib.md&title=%5BFEEDBACK%5D)** :point_left: :blue_book:
+## :blue_book: **Comience con NullOut: documentos completos [Aquí](https://brunonavarro.github.io/NullOutLib/docs/)** :point_left: :blue_book:
 
 > [!warning]
 > No se debe implementar estas funciones genericas para atributos de data clases que almenos no inicializan sus atributos en null por ejemplo:
