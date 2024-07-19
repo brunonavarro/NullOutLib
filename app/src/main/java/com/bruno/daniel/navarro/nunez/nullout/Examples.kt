@@ -75,7 +75,8 @@ class Examples {
 
         valorObjeto1.let {
             if ((it.numberPermission ?: 0) > 0){
-                objetoPrincipal.rol.getOrDefault().numberPermission = it.numberPermission
+                objetoPrincipal.rol.getOrDefault()
+                    .numberPermission = it.numberPermission
             }
         }
 
@@ -92,15 +93,17 @@ class Examples {
      * Se debe dejar que admita nulo, y en el interior de la
      * estructura condicional seguir el ejemplo 1.
      * **/
-    fun exampleThreeWithOutNullOut(objetoPrincipal: User): String? {
+    fun exampleThreeWithOutNullOut(objetoPrincipal: User): Int? {
         val user = User()
         val valorObjeto1: Rol? = user.rol
 
         valorObjeto1?.let {
-            objetoPrincipal.username = it.name
+            objetoPrincipal.rol?.numberPermission = it.numberPermission
         }
-        return objetoPrincipal.username
+        return objetoPrincipal.rol?.numberPermission
     }
+
+
 
     /**
      * Example 03 - With NullOut
@@ -112,15 +115,17 @@ class Examples {
      * Se debe dejar que admita nulo, y en el interior de la
      * estructura condicional seguir el ejemplo 1.
      * **/
-    fun exampleThreeWithNullOut(objetoPrincipal: User): String {
+    fun exampleThreeWithNullOut(objetoPrincipal: User): Int {
         val user = User()
         val valorObjeto1: Rol? = user.rol
 
         valorObjeto1?.let {
-            objetoPrincipal.rol.getOrDefault().numberPermission = it.numberPermission
+            objetoPrincipal.rol.getOrDefault()
+                .numberPermission = it.numberPermission
         }
 
-        return objetoPrincipal.username.getOrDefault()
+        return objetoPrincipal.rol.getOrDefault()
+            .numberPermission.getOrDefault()
     }
 
     /**
@@ -355,9 +360,10 @@ class Examples {
         val user = User()
         val valorObjeto1: List<Category>? = user.categories
 
-        valorObjeto1.getListOrDefault().find { (it.rating ?: 0) > 0 }.getOrDefault().name?.let {
-            objetoPrincipal.rol.getOrDefault().name = it
-        }
+        valorObjeto1.getListOrDefault().find { (it.rating ?: 0) > 0 }
+            .getOrDefault().name?.let {
+                objetoPrincipal.rol.getOrDefault().name = it
+            }
 
         return objetoPrincipal.rol.getOrDefault().name.getOrDefault()
     }
