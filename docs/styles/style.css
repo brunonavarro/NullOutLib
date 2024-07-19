@@ -1,4 +1,74 @@
-/*body {
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+header {
+    background-color: #4285f4;
+    color: white;
+    padding: 1rem;
+    text-align: start;
+}
+.container {
+    display: flex;
+    justify-content: center;
+}
+nav {
+    top: 0;
+    position: sticky;
+    width: 250px;
+    height: 100vh;
+    background: white;
+    padding: 20px;
+    border-right: 5px solid #4285f4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    margin-bottom: 10px;
+}
+nav ul li a {
+    color: #4285f4;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
+.content {
+    margin: 20px;
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-left: 20px;
+}
+h2, h3 {
+    color: #4285f4;
+}
+h1 {
+    margin-left: 1cm;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+a {
+    color: #4285f4;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #4285f4;
+    color: white;
+}
+
+
+
+body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
@@ -7,10 +77,9 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-}*/
+}
 
 .code-container {
-    position: relative;
     background-color: #282c34;
     padding: 20px;
     border-radius: 10px;
@@ -20,51 +89,16 @@
     max-height: 80vh;
 }
 
-.copy-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #61dafb;
-    color: #282c34;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-.copy-button:hover {
-    background-color: #21a1f1;
-}
-
 pre {
     margin: 0;
     overflow: auto;
-    counter-reset: line-numbering;
 }
 
-/*code {
+code {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     color: #f8f8f2;
-    position: relative;
-    white-space: pre-wrap;
-    word-break: break-all;
-    padding-left: 3em; /* espacio para los números de línea */
-}*/
-
-/*code::before {
-    content: counter(line-numbering);
-    counter-increment: line-numbering;
-    display: block;
-    text-align: right;
-    width: 2.5em;
-    position: absolute;
-    left: 0;
-    color: #888;
-    border-right: 1px solid #555;
-    padding-right: 0.5em;
-} */
+}
 
 /* Personaliza los colores para Kotlin */
 .hljs-keyword { color: #c5a5c5; }
