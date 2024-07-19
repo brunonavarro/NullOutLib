@@ -135,14 +135,38 @@
         <section id="instalacion">
             <h2>Instalación</h2>
             <p>Pasos para instalar y configurar el proyecto.</p>
-            <pre>
-                    <code>
-                        git clone https://github.com/usuario/nombre-del-proyecto.git
-                        cd nombre-del-proyecto
-                        npm install
-                        npm start
+            <p>En gradle de proyecto agregar las siguientes lineas:</p>
+            <div class="code-container">
+                <pre><code >
+plugins {
+   id("com.google.devtools.ksp") version "KotlinVersion-VersionKSP" apply false
+}
+
+buildscript {
+    repositories {
+        ...
+        maven(url = "https://jitpack.io")
+    }
+    ...
+}
                     </code>
                 </pre>
+            </div>
+            <p>en gradle de app agregar las siguientes lineas:</p>
+            <div class="code-container">
+                <pre><code >
+plugins{
+	id("com.google.devtools.ksp")
+}
+...
+dependecies {
+	implementation("com.github.brunonavarro:DecoradorNullOut:1.0.0-beta5")
+	implementation("com.github.brunonavarro:NullOutLib:1.0.0-beta1")
+	ksp("com.github.brunonavarro:ProcesadorNullOutLib:1.0.0-beta2")
+}
+                    </code>
+                </pre>
+            </div>
         </section>
 
         <section id="uso">
