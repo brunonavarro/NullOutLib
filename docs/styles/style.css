@@ -86,11 +86,11 @@ code::before {
 }
 
 
-.compatible {
+.compatible h4 {
     color: #1d7e05;
 }
 
-.incompatible {
+.incompatible h4 {
     color: #ee1515;
 }
 
