@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet" href="styles/style.css">
 
     <title>Documentación NullOut</title>
 
@@ -165,12 +166,12 @@
                     <p>Las variables primitivas admitidas son: (String, Int, Double, Boolean)</p>
                     <div class="code-container">
                         <button class="copy-button" onclick="copyToClipboard()">Copiar</button>
-                        <pre><code class="kotlin">
-                            fun String?.getOrDefault(value: String? = null): String
-                            fun Int?.getOrDefault(value: Int? = null): Int
-                            fun Double?.getOrDefault(value: Double? = null): Double
-                            fun Boolean?.getOrDefault(value: Boolean? = null): Boolean
-                            fun Number?.getOrDefault(value: Number? = null): Boolean
+                        <pre class="line-numbers"><code class="language-kotlin">
+                        fun String?.getOrDefault(value: String? = null): String
+                        fun Int?.getOrDefault(value: Int? = null): Int
+                        fun Double?.getOrDefault(value: Double? = null): Double
+                        fun Boolean?.getOrDefault(value: Boolean? = null): Boolean
+                        fun Number?.getOrDefault(value: Number? = null): Boolean
                         </code></pre>
                     </div>
                     <p>
@@ -355,7 +356,9 @@
         <p>&copy; 2024 NullOutLib. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-kotlin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="styles/script.js"></script>
 
 </body>

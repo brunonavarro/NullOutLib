@@ -40,36 +40,10 @@ body {
 pre {
     margin: 0;
     overflow: auto;
-    counter-reset: line-numbering;
 }
 
 code {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     color: #f8f8f2;
-    position: relative;
-    white-space: pre-wrap;
-    word-break: break-all;
-    padding-left: 3em; /* espacio para los números de línea */
 }
-
-code::before {
-    content: counter(line-numbering);
-    counter-increment: line-numbering;
-    display: block;
-    text-align: right;
-    width: 2.5em;
-    position: absolute;
-    left: 0;
-    color: #888;
-    border-right: 1px solid #555;
-    padding-right: 0.5em;
-}
-
-/* Personaliza los colores para Kotlin */
-.hljs-keyword { color: #c5a5c5; }
-.hljs-function { color: #79b6f2; }
-.hljs-string { color: #98c379; }
-.hljs-comment { color: #5c6370; }
-.hljs-operator { color: #56b6c2; }
-.hljs-punctuation { color: #abb2bf; }
