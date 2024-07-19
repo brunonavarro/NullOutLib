@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -5,105 +6,91 @@ body {
     background-color: #f5f5f5;
     color: #333;
 }
-header {
-    background-color: #4285f4;
-    color: white;
-    padding: 1rem;
-    text-align: start;
-}
-.container {
-    display: flex;
-    justify-content: center;
-}
-nav {
-    top: 0;
-    position: sticky;
-    width: 250px;
-    height: 100vh;
-    background: white;
-    padding: 20px;
-    border-right: 5px solid #4285f4;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-ul li {
-    margin-bottom: 10px;
-}
-nav ul li a {
-    color: #4285f4;
-    text-decoration: none;
-}
-nav ul li a:hover {
-    text-decoration: underline;
-}
-.content {
-    margin: 20px;
-    flex: 1;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-left: 20px;
-}
-h2, h3 {
-    color: #4285f4;
-}
-h1 {
-    margin-left: 1cm;
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-a {
-    color: #4285f4;
-}
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #4285f4;
-    color: white;
-}
 
-
-
-/*body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+pre {
+    background: #f4f4f4;
+    padding: 0rem;
     margin: 0;
-}*/
+    border: 0.1px solid #ddd;
+    overflow: auto;
+    /*counter-reset: line-numbering;*/
+}
+
 
 .code-container {
-    background-color: #282c34;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background-color: #d4d7dd;
+    padding: 2.5px;
+    border-radius: 2.5px;
+    box-shadow: 0 1px 1px rgba(184, 182, 182, 0.1);
     overflow: auto;
-    max-width: 90%;
+    max-width: 100%;
     max-height: 80vh;
 }
 
-pre {
-    margin: 0;
-    overflow: auto;
+code {
+    font-family: "Courier New", Courier, monospace;
+    background: #f4f4f4;
+    padding: 0.1rem 0.1rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    position: relative;
+    white-space: pre-wrap;
+    word-break: break-all;
+    padding-left: 0em;  /*espacio para los números de línea */
+}
+code::before {
+    /*content: counter(line-numbering);
+    counter-increment: line-numbering;*/
+    display: block;
+    text-align: right;
+    width: 2.5em;
+    position: absolute;
+    left: 0;
+    color: #888;
+    border-right: 3px solid #555;
+    padding-right: 0em;
 }
 
-code {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem;
-    color: #f8f8f2;
+
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #61dafb;
+    color: #282c34;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
+
+.copy-button:hover {
+    background-color: #21a1f1;
+}
+
+.line-numbers {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 5px;
+    border-right: 1px solid #555;
+    color: #888;
+    pointer-events: none;
+    text-align: right;
+}
+
+.line-numbers div {
+    line-height: 1.5;
+}
+
+
 
 /* Personaliza los colores para Kotlin */
 .hljs-keyword { color: #c5a5c5; }
 .hljs-function { color: #79b6f2; }
-.hljs-string { color: #98c379; }
+.hljs-string { color: #74a84e; }
 .hljs-comment { color: #5c6370; }
 .hljs-operator { color: #56b6c2; }
-.hljs-punctuation { color: #abb2bf; }
+.hljs-punctuation { color: #98b1df; }
