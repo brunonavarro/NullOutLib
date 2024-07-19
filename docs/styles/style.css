@@ -1,4 +1,4 @@
-body {
+/*body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-}
+}*/
 
 .code-container {
     position: relative;
@@ -43,7 +43,7 @@ pre {
     counter-reset: line-numbering;
 }
 
-code {
+/*code {
     font-family: 'Courier New', Courier, monospace;
     font-size: 1rem;
     color: #f8f8f2;
@@ -51,9 +51,9 @@ code {
     white-space: pre-wrap;
     word-break: break-all;
     padding-left: 3em; /* espacio para los números de línea */
-}
+}*/
 
-code::before {
+/*code::before {
     content: counter(line-numbering);
     counter-increment: line-numbering;
     display: block;
@@ -64,7 +64,7 @@ code::before {
     color: #888;
     border-right: 1px solid #555;
     padding-right: 0.5em;
-}
+} */
 
 /* Personaliza los colores para Kotlin */
 .hljs-keyword { color: #c5a5c5; }
