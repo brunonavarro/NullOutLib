@@ -162,6 +162,59 @@
                 <section id="primitive">
                     <h3>Funciones notNull para variables primitivas:</h3>
                     <p>Las variables primitivas admitidas son: (String, Int, Double, Boolean)</p>
+
+                    <pre class="lang-kotlin" translate="no" dir="ltr" is-upgraded="">
+                        <span class="kwd">private</span>
+                        <span class="pln"> lateinit </span>
+                        <span class="kwd">var</span>
+                        <span class="pln"> binding</span>
+                        <span class="pun">:</span>
+                        <span class="pln"> </span>
+                        <span class="typ">ResultProfileBinding</span>
+                        <span class="pln"><br><br></span>
+                        <span class="kwd">override</span>
+                        <span class="pln"> </span>
+                        <span class="kwd">fun</span>
+                        <span class="pln"> onCreate</span>
+                        <span class="pun">(</span>
+                        <span class="pln">savedInstanceState</span>
+                        <span class="pun">:</span>
+                        <span class="pln"> </span>
+                        <span class="typ">Bundle</span>
+                        <span class="pun">?)</span>
+                        <span class="pln"> </span>
+                        <span class="pun">{</span>
+                        <span class="pln"><br>&nbsp; &nbsp; </span>
+                        <span class="kwd">super</span>
+                        <span class="pun">.</span>
+                        <span class="pln">onCreate</span>
+                        <span class="pun">(</span>
+                        <span class="pln">savedInstanceState</span>
+                        <span class="pun">)</span>
+                        <span class="pln"><br>&nbsp; &nbsp; binding </span>
+                        <span class="pun">=</span>
+                        <span class="pln"> </span>
+                        <span class="typ">ResultProfileBinding</span>
+                        <span class="pun">.</span>
+                        <span class="pln">inflate</span>
+                        <span class="pun">(</span>
+                        <span class="pln">layoutInflater</span>
+                        <span class="pun">)</span>
+                        <span class="pln"><br>&nbsp; &nbsp; </span>
+                        <span class="kwd">val</span>
+                        <span class="pln"> view </span>
+                        <span class="pun">=</span>
+                        <span class="pln"> binding</span>
+                        <span class="pun">.</span>
+                        <span class="pln">root<br>&nbsp; &nbsp; setContentView</span>
+                        <span class="pun">(</span>
+                        <span class="pln">view</span>
+                        <span class="pun">)</span>
+                        <span class="pln"><br></span>
+                        <span class="pun">}</span>
+                        <span class="pln"><br></span>
+                    </pre>
+
                     <div class="code-container">
                         <button class="copy-button" onclick="copyToClipboard()">Copiar</button>
                         <pre class="line-numbers"><code class="language-kotlin">
