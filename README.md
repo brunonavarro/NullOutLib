@@ -18,6 +18,14 @@
 
 ---
 
+![image](https://github.com/user-attachments/assets/a7073f08-d4f5-4efa-b078-a5acc2c2309e) ![image](https://github.com/user-attachments/assets/a731ac2d-f9c9-42d1-b422-182549e12eda)
+
+
+
+
+
+
+
 ### Objetivos:
 
 * Reducir el uso del operador ‘?’ en Kotlin, en situaciones donde no se amerita.
