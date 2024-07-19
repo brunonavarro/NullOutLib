@@ -86,6 +86,14 @@ code::before {
 }
 
 
+.compatible {
+    color: #1d7e05;
+}
+
+.incompatible {
+    color: #ee1515;
+}
+
 
 /* Personaliza los colores para Kotlin */
 .hljs-keyword { color: #c5a5c5; }
