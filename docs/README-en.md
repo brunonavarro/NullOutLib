@@ -21,15 +21,15 @@
 > ## 🟥 Not Compatible 🔴
 > ```kotlin
 > data class User(
-> val userName: String,
-> val password: String
+>   val userName: String,
+>   val password: String
 > )
 > ```
 > ## 🟩 Compatible 🟢
 > ```kotlin
 > data class User(
-> val userName: String? =null,
-> val password: String? =null
+>   val userName: String? =null,
+>   val password: String? =null
 > )
 > ```
 > ### The following interface must be implemented in all data classes:
@@ -44,32 +44,40 @@
 > ```kotlin
 > @NullOutEntity
 > data class User(
-> val userName: String? =null,
-> val password: String? =null
+>   val userName: String? =null,
+>   val password: String? =null
 > ): WithDefault
 > ```
+> ### Recommendations for use in refactors:
+> The name `getOrDefault()` applies only to `Primitive, Object, or Any` data types. In case you need `getOrDefault()` for the types `List, Array, ArrayList, Pair, Map, MutableList, Sequence, Iterable`, or similar. Use the get + TYPE + OrDefault() function.
+>
+> '**Example:**
+>
+> > for type `List` use `getListOrDefault()` or for type `Pair` use `getPairOrDefault()`
+>
+> In cases of refactoring, do not use the functions offered by **NullOutLib** where you declare `'?.apply{}'` , `'?.let{}'`, `'?.run{}'` and in whose block logic there are no more validation conditions or `setter()` or `add()` methods are called.
 
 ## 👨‍💻 :pill: Quick start: :rocket: :rocket: :rocket:
 
 In project gradle add the following lines:
 
-``gradle
+```gradle
 plugins {
-id("com.google.devtools.ksp") version "KotlinVersion-VersionKSP" apply false
+  id("com.google.devtools.ksp") version "KotlinVersion-VersionKSP" apply false
 }
 
 buildscript {
-repositories {
-...
-maven(url = "https://jitpack.io")
-}
-...
+  repositories {
+    ...
+    maven(url = "https://jitpack.io")
+  }
+  ...
 }
 ```
 
 in app gradle add the following lines:
 
-``gradle
+```gradle
 plugins{
   id("com.google.devtools.ksp")
 }
