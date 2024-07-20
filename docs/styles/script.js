@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
-function copyToClipboard() {
-    const code = document.querySelector('pre code').innerText;
+function copyToClipboard(event) {
+    const elementParent = event.target.parentNode;
+    const code = elementParent.querySelector('code').innerText;
     navigator.clipboard.writeText(code).then(() => {
         alert('Código copiado al portapapeles');
     }).catch(err => {
@@ -20,4 +21,3 @@ function addLineNumbers(code) {
         return `<span class="line">${line}</span>`;
     }).join('\n');
 }
-
