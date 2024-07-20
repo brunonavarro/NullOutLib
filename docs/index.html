@@ -38,24 +38,6 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-        }
-
-        nav ul li a {
-            color: #4285f4;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
         .content {
             margin: 20px;
             flex: 1;
@@ -83,9 +65,6 @@
             padding: 0.2rem 0.4rem;
             border-radius: 3px;
         }*/
-        a {
-            color: #4285f4;
-        }
 
         footer {
             text-align: center;
@@ -109,6 +88,36 @@
             font-size: 40px;
             margin-bottom: 10px;
         }
+
+        .list_item, .list_item_inside {
+            padding: 0;
+            list-style-type: none;
+            margin-bottom: 8px;
+        }
+
+        .list_item > a, .list_item_inside > a {
+            color: #4285f4;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .list_item > a:hover, .list_item_inside > a:hover {
+            color: #c54f00;
+        }
+
+        .list_items_show {
+            width: 80%;
+            margin-left: auto;
+            transition: height 0.3s;
+            height: 0;
+            overflow: hidden
+        }
+
+        .navbar-ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
     </style>
 </head>
 
@@ -119,24 +128,28 @@
     <div class="container">
         <nav class="navbar">
             <ul class="navbar-ul">
-                <li><a href="#descripcion">Descripción</a></li>
-                <li><a href="#instalacion">Instalación</a></li>
-                <li><a href="#uso">Uso</a></li>
-                <li><a href="#references">Referencias</a></li>
-                <ul>
-                    <li><a href="#primitive">Funciones notNull para variables primitivas</a></li>
-                    <li><a href="#pairMap">Funciones notNull para variables Pair o Map</a></li>
-                    <li><a href="#object">Funciones notNull para variables objetos</a></li>
-                    <li><a href="#array">Funciones notNull para variables array</a></li>
-                    <li><a href="#arrayList">Funciones notNull para variables arrayList</a></li>
-                    <li><a href="#list">Funciones notNull para variables List</a></li>
-                    <li><a href="#mutableList">Funciones notNull para variables MutableList</a></li>
-                    <li><a href="#firstOrDefaultList">Funcion firsOrDefault para listas</a></li>
-                    <li><a href="#filterOrDefaultList">Funcion filterOrDefault para listas</a></li>
-                    <li><a href="#flagMapOrDefaultList">Funcion flagMapOrDefault para listas</a></li>
+                <li class="list_item"><a href="#descripcion">Descripción</a></li>
+                <li class="list_item"><a href="#instalacion">Instalación</a></li>
+                <li class="list_item"><a href="#uso">Uso</a></li>
+                <li class="list_item list_item--click">
+                    <a href="#references">Referencias</a>
+                </li>
+
+                <ul class="list_items_show">
+                    <li class="list_item_inside"><a href="#primitive">Funciones notNull para variables primitivas</a></li>
+                    <li class="list_item_inside"><a href="#pairMap">Funciones notNull para variables Pair o Map</a></li>
+                    <li class="list_item_inside"><a href="#object">Funciones notNull para variables objetos</a></li>
+                    <li class="list_item_inside"><a href="#array">Funciones notNull para variables array</a></li>
+                    <li class="list_item_inside"><a href="#arrayList">Funciones notNull para variables arrayList</a></li>
+                    <li class="list_item_inside"><a href="#list">Funciones notNull para variables List</a></li>
+                    <li class="list_item_inside"><a href="#mutableList">Funciones notNull para variables MutableList</a></li>
+                    <li class="list_item_inside"><a href="#firstOrDefaultList">Funcion firsOrDefault para listas</a></li>
+                    <li class="list_item_inside"><a href="#filterOrDefaultList">Funcion filterOrDefault para listas</a></li>
+                    <li class="list_item_inside"><a href="#flagMapOrDefaultList">Funcion flagMapOrDefault para listas</a></li>
                 </ul>
-                <li><a href="#contribuciones">Contribuciones</a></li>
-                <li><a href="#licencia">Licencia</a></li>
+                
+                <li class="list_item"><a href="#contribuciones">Contribuciones</a></li>
+                <li class="list_item"><a href="#licencia">Licencia</a></li>
             </ul>
         </nav>
         <div class="content">
@@ -156,9 +169,8 @@
                 <p>En gradle de proyecto agregar las siguientes lineas:</p>
                 <div class="code-container">
                     <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
-                        <code>
-plugins {
-    id("com.google.devtools.ksp") version "KotlinVersion-VersionKSP" apply false
+                        <code>plugins {
+id("com.google.devtools.ksp") version "KotlinVersion-VersionKSP" apply false
 }
 
 buildscript {
@@ -390,10 +402,13 @@ fun <reified T> MutableList<T?>?.getMutableListOrDefault(default: MutableList<T?
                 <p>Guía para contribuir al proyecto.</p>
                 <ul>
                     <li>Haz un fork del proyecto</li>
-                    <li>Crea una nueva rama (<code onclick="copyToClipboard(event)"> git checkout -b feature-nueva </code>)</li>
-                    <li>Realiza tus cambios y haz commits (<code onclick="copyToClipboard(event)"> git commit -m 'Añadir nueva característica' </code>)
+                    <li>Crea una nueva rama (<code
+                            onclick="copyToClipboard(event)"> git checkout -b feature-nueva </code>)</li>
+                    <li>Realiza tus cambios y haz commits (<code
+                            onclick="copyToClipboard(event)"> git commit -m 'Añadir nueva característica' </code>)
                     </li>
-                    <li>Haz push a la rama (<code onclick="copyToClipboard(event)"> git push origin feature-nueva </code>)</li>
+                    <li>Haz push a la rama (<code
+                            onclick="copyToClipboard(event)"> git push origin feature-nueva </code>)</li>
                     <li>Abre un Pull Request</li>
                 </ul>
             </section>
