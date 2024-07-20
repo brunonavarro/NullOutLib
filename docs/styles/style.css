@@ -88,7 +88,7 @@ code::before {
 }
 
 .btn-copy {
-    background-image: url("icons8-copy-24\ \(2\).png");
+    background-image: url("copy-24-outline.png");
     background-repeat: no-repeat;
     margin: 5px 10px;
     padding: 13px;
@@ -101,7 +101,7 @@ code::before {
 }
 
 .btn-copy:hover {
-    background-image: url("icons8-copy-24\ \(3\).png");
+    background-image: url("copy-24-full.png");
 }
 
 .compatible h4 {
