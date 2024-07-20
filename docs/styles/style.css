@@ -8,14 +8,15 @@ body {
 }
 
 pre {
+    cursor: text;
     background: #f4f4f4;
     padding: 0rem;
     margin: 0;
     border: 0.1px solid #ddd;
     overflow: auto;
+    position: relative;
     /*counter-reset: line-numbering;*/
 }
-
 
 .code-container {
     position: relative;
@@ -24,6 +25,7 @@ pre {
     border-radius: 2.5px;
     box-shadow: 0 1px 1px rgba(184, 182, 182, 0.1);
     overflow: auto;
+    white-space: nowrap;
     max-width: 100%;
     max-height: 80vh;
 }
@@ -85,6 +87,22 @@ code::before {
     line-height: 1.5;
 }
 
+.btn-copy {
+    background-image: url("icons8-copy-24\ \(2\).png");
+    background-repeat: no-repeat;
+    margin: 5px 10px;
+    padding: 13px;
+    cursor: pointer;
+    border: none;
+    color: #818181;
+    transition: all 0.2s;
+    position: absolute;
+    right: 0;
+}
+
+.btn-copy:hover {
+    background-image: url("icons8-copy-24\ \(3\).png");
+}
 
 .compatible h4 {
     color: #1d7e05;
