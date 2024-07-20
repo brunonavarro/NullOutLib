@@ -48,6 +48,14 @@
 >    val password: String? = null
 > ): WithDefault
 > ```
+> ### Recomendaciones de uso en refactors:
+> El nombre `getOrDefault()` aplica unicamente a tipos de datos `Primitivos, Object o Any`. En caso de necesitar `getOrDefault()` para los tipos `List, Array, ArrayList, Pair, Map, MutableList, Sequence, Iterable`, o similares. Usar get + TIPO + OrDefault() function.
+> 
+> ´**Ejemplo:**
+>
+> >	para tipo `List` usar `getListOrDefault()` o para tipo `Pair` usar `getPairOrDefault()`
+>
+> En casos de refactor, no usar las funciones ofrecidas por **NullOutLib** donde se declare `‘?.apply{}’` , `‘?.let{}’`, `‘?.run{}’` y en cuya logica de bloque no hayan mas condiciones de validacion o se invoquen a metodos `setter()` o `add()`.
 
 ## 👨‍💻 :pill: Inicio rapido: :rocket: :rocket: :rocket:
 
