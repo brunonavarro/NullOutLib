@@ -5,6 +5,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
+let listElements = document.querySelectorAll('.list_item--click');
+let menu = document.querySelector('.list_items_show');
+listElements.forEach((element) => {
+    element.addEventListener('click', () => {
+        element.classList.toggle('is-active');
+
+        let height = 0;
+        if (menu.clientHeight == "0") {
+            height = menu.scrollHeight;
+        }
+        menu.style.height = `${height}px`;
+    })
+});
+
 function copyToClipboard(event) {
     const elementParent = event.target.parentNode;
     const code = elementParent.querySelector('code').innerText;
