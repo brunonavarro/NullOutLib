@@ -395,6 +395,85 @@ fun <reified T> MutableList<T?>?.getMutableListOrDefault(default: MutableList<T?
                         If null, it returns a default value, for which an empty mutableList is created.
                     </p>
                 </section>
+
+                <section id="firstOrDefaultList">
+                    <h3>NotNull functions for MutableList variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> List<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : Any
+fun <reified T> List<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : WithDefault
+fun <reified T> List<T>?.firstOrDefault(): T where T : Any
+fun <reified T> List<T>?.firstOrDefault(): T where T : WithDefault
+
+fun <reified T> MutableList<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : Any
+fun <reified T> MutableList<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : WithDefault
+fun <reified T> MutableList<T>?.firstOrDefault(): T where T : Any
+fun <reified T> MutableList<T>?.firstOrDefault(): T where T : WithDefault
+
+fun <reified T> Iterable<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : Any
+fun <reified T> Iterable<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : WithDefault
+fun <reified T> Iterable<T>?.firstOrDefault(): T where T : Any
+fun <reified T> Iterable<T>?.firstOrDefault(): T where T : WithDefault
+
+fun <reified T> Array<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T: Any
+fun <reified T> Array<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T: WithDefault
+fun <reified T> Array<T>?.firstOrDefault(): T where T: Any
+fun <reified T> Array<T>?.firstOrDefault(): T where T: WithDefault
+
+fun <reified T> Sequence<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T: WithDefault
+fun <reified T> Sequence<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T: Any
+fun <reified T> Sequence<T>?.firstOrDefault(): T where T: WithDefault
+fun <reified T> Sequence<T>?.firstOrDefault(): T where T: Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        This function is responsible for receiving the real value of the attribute.
+                        If a Boolean predicate condition is defined, the search is performed based on said condition,
+                        otherwise it simply takes the first item in the list; But if the result is null,
+                        it returns a default value, for which an empty instance is created according to the data type.
+                    </p>
+                </section>
+
+                <section id="filterOrDefaultList">
+                    <h3>NotNull functions for MutableList variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <T> Iterable<T>?.filterOrDefault(predicate: (T) -> Boolean): List<T> where T: WithDefault
+fun <T> Iterable<T>?.filterOrDefault(predicate: (T) -> Boolean): List<T> where T: Any
+
+fun <T> Sequence<T>?.filterOrDefault(predicate: (T) -> Boolean): Sequence<T> where T: WithDefault
+fun <T> Sequence<T>?.filterOrDefault(predicate: (T) -> Boolean): Sequence<T> where T: Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        This function is responsible for receiving the real value of the attribute.
+                        If a Boolean predicate condition is defined, filtering is performed based on said condition;
+                        But if the result is null, it returns a default value, for which an empty list is created according to the data type,
+                        'Iterable' or 'Sequence'.
+                    </p>
+                </section>
+
+                <section id="flagMapOrDefaultList">
+                    <h3>NotNull functions for MutableList variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <T, R>  Sequence<T>?.flatMapOrDefault(transform: (T) -> Iterable<R>): Sequence<R> where R: WithDefault, T: WithDefault
+fun <T, R>  Sequence<T>?.flatMapOrDefault(transform: (T) -> Iterable<R>): Sequence<R> where R: Any, T: Any
+
+fun <T, R>  Iterable<T>?.flatMapOrDefault(transform: (T) -> Iterable<R>): List<R> where R: WithDefault
+fun <T, R>  Iterable<T>?.flatMapOrDefault(transform: (T) -> Iterable<R>): List<R> where R: Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        This function is responsible for receiving the real value of the attribute.
+                        If a transformation condition is defined, the flagMap is created based on said condition;
+                        But if the result is null, it returns a default value,
+                        for which an empty list is created according to the data type, 'Iterable' or 'Sequence'.
+                    </p>
+                </section>
             </section>
 
             <section id="contribuciones">

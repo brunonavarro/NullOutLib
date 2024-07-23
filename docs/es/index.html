@@ -395,7 +395,91 @@ fun <reified T> MutableList<T?>?.getMutableListOrDefault(default: MutableList<T?
                         en caso sea null devuelve un valor por defecto, para el cual se crea un mutableList vacio.
                     </p>
                 </section>
+
+                <section id="firstOrDefaultList">
+                    <h3>NotNull functions for MutableList variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> List<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : Any
+fun <reified T> List<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : WithDefault
+fun <reified T> List<T>?.firstOrDefault(): T where T : Any
+fun <reified T> List<T>?.firstOrDefault(): T where T : WithDefault
+
+fun <reified T> MutableList<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : Any
+fun <reified T> MutableList<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : WithDefault
+fun <reified T> MutableList<T>?.firstOrDefault(): T where T : Any
+fun <reified T> MutableList<T>?.firstOrDefault(): T where T : WithDefault
+
+fun <reified T> Iterable<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : Any
+fun <reified T> Iterable<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T : WithDefault
+fun <reified T> Iterable<T>?.firstOrDefault(): T where T : Any
+fun <reified T> Iterable<T>?.firstOrDefault(): T where T : WithDefault
+
+fun <reified T> Array<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T: Any
+fun <reified T> Array<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T: WithDefault
+fun <reified T> Array<T>?.firstOrDefault(): T where T: Any
+fun <reified T> Array<T>?.firstOrDefault(): T where T: WithDefault
+
+fun <reified T> Sequence<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T: WithDefault
+fun <reified T> Sequence<T>?.firstOrDefault(predicate: (T) -> Boolean): T where T: Any
+fun <reified T> Sequence<T>?.firstOrDefault(): T where T: WithDefault
+fun <reified T> Sequence<T>?.firstOrDefault(): T where T: Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        Esta funcion se encargan de recibir el valor real del atributo,
+                        en caso tenga definido una condicion booleana predicate,
+                        se realiza la busqueda basado en dicha condición, sino simplemente toma el primer item de la lista;
+                        Pero en caso el resultado sea null, devuelve un valor por defecto,
+                        para el cual se crea una instancia vacia deacuerdo al tipo de dato.
+                    </p>
+                </section>
+
+                <section id="filterOrDefaultList">
+                    <h3>NotNull functions for MutableList variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <T> Iterable<T>?.filterOrDefault(predicate: (T) -> Boolean): List<T> where T: WithDefault
+fun <T> Iterable<T>?.filterOrDefault(predicate: (T) -> Boolean): List<T> where T: Any
+
+fun <T> Sequence<T>?.filterOrDefault(predicate: (T) -> Boolean): Sequence<T> where T: WithDefault
+fun <T> Sequence<T>?.filterOrDefault(predicate: (T) -> Boolean): Sequence<T> where T: Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        Esta funcion se encargan de recibir el valor real del atributo,
+                        en caso tenga definido una condicion booleana predicate, se realiza el filtrado basado en dicha condición;
+                        Pero en caso el resultado sea null, devuelve un valor por defecto,
+                        para el cual se crea una lista vacia deacuerdo al tipo de dato, ‘Iterable’ o ‘Secuence’.
+                    </p>
+                </section>
+
+                <section id="flagMapOrDefaultList">
+                    <h3>NotNull functions for MutableList variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <T, R>  Sequence<T>?.flatMapOrDefault(transform: (T) -> Iterable<R>): Sequence<R> where R: WithDefault, T: WithDefault
+fun <T, R>  Sequence<T>?.flatMapOrDefault(transform: (T) -> Iterable<R>): Sequence<R> where R: Any, T: Any
+
+fun <T, R>  Iterable<T>?.flatMapOrDefault(transform: (T) -> Iterable<R>): List<R> where R: WithDefault
+fun <T, R>  Iterable<T>?.flatMapOrDefault(transform: (T) -> Iterable<R>): List<R> where R: Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        Esta funcion se encargan de recibir el valor real del atributo,
+                        en caso tenga definido una condicion de transformación,
+                        se realiza el flagMap basado en dicha condición; Pero en caso el resultado sea null,
+                        devuelve un valor por defecto, para el cual se crea una lista vacia deacuerdo al tipo de dato,
+                        ‘Iterable’ o ‘Secuence’.
+                    </p>
+                </section>
+
             </section>
+
+
 
             <section id="contribuciones">
                 <h2>Contribuciones</h2>
