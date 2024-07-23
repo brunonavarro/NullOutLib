@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism-tomorrow.min.css">-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.css">
+-->
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <title>Documentación NullOut</title>
+    <script>
+
+    </script>
+    <style>
+        header {
+            background-color: #4285f4;
+            color: white;
+            padding: 1rem;
+            text-align: start;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav {
+            top: 0;
+            position: sticky;
+            width: 250px;
+            height: 100vh;
+            background: white;
+            padding: 20px;
+            border-right: 5px solid #4285f4;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            margin: 20px;
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-left: 20px;
+        }
+
+        h2,
+        h3 {
+            color: #4285f4;
+        }
+
+        /*pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }*/
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #4285f4;
+            color: white;
+        }
+
+        .kotlin-code {
+            background-color: #f6f8fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 16px;
+            font-family: monospace;
+            font-size: 14px;
+            overflow: auto;
+        }
+
+        h1 {
+            margin-left: 1cm;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .list_item, .list_item_inside {
+            padding: 0;
+            list-style-type: none;
+            margin-bottom: 8px;
+        }
+
+        .list_item > a, .list_item_inside > a {
+            color: #4285f4;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .list_item > a:hover, .list_item_inside > a:hover {
+            color: #c54f00;
+        }
+
+        .list_items_show {
+            width: 80%;
+            margin-left: auto;
+            transition: height 0.3s;
+            height: 0;
+            overflow: hidden
+        }
+
+        .navbar-ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Documentación NullOut</h1>
+    </header>
+    <div class="container">
+        <nav class="navbar">
+            <ul class="navbar-ul">
+                <li class="list_item"><a href="#descripcion">Description</a></li>
+                <li class="list_item"><a href="#instalacion">Installation</a></li>
+                <li class="list_item"><a href="#uso">Use</a></li>
+                <li class="list_item list_item--click">
+                    <a href="#references">References</a>
+                </li>
+
+                <ul class="list_items_show">
+                    <li class="list_item_inside"><a href="#primitive">NotNull functions for primitive variables</a></li>
+                    <li class="list_item_inside"><a href="#pairMap">NotNull functions for Pair or Map variables</a></li>
+                    <li class="list_item_inside"><a href="#object">NotNull functions for object variables</a></li>
+                    <li class="list_item_inside"><a href="#array">NotNull functions for array variables</a></li>
+                    <li class="list_item_inside"><a href="#arrayList">NotNull functions for arrayList variables</a></li>
+                    <li class="list_item_inside"><a href="#list">NotNull functions for List variables</a></li>
+                    <li class="list_item_inside"><a href="#mutableList">NotNull functions for MutableList variables</a></li>
+                    <li class="list_item_inside"><a href="#firstOrDefaultList">FirsOrDefault function for lists</a></li>
+                    <li class="list_item_inside"><a href="#filterOrDefaultList">FilterOrDefault function for lists</a></li>
+                    <li class="list_item_inside"><a href="#flagMapOrDefaultList">FlagMapOrDefault function for lists</a></li>
+                </ul>
+                
+                <li class="list_item"><a href="#contribuciones">Contributions</a></li>
+                <li class="list_item"><a href="#licencia">License</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section id="descripcion">
+                <h2>Description</h2>
+                <p>NullOut is a software library that provides an alternative solution to eliminate nulls.
+                    in projects that are in production and in which the option to eliminate nulls from
+                    The root, that is, from the Model layer, is more tedious and requires high consumption of manual resources.
+                    of work or dependence on other equipment. NullOut is focused on removing conditional branches
+                    occasioned by the ternary operator “?” in Kotlin, within the coverage analysis of the
+                    SonarQube tool.</p>
+            </section>
+
+            <section id="instalacion">
+                <h2>Installation</h2>
+                <p>Steps to install and configure the project.</p>
+                <p>In project gradle add the following lines:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code>plugins {
+id("com.google.devtools.ksp") version "KotlinVersion-VersionKSP" apply false
+}
+
+buildscript {
+    repositories {
+        ...
+        maven(url = "https://jitpack.io")
+    }
+    ...
+}
+                    </code>
+                </pre>
+                </div>
+                <p>in app gradle add the following lines:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code>
+plugins{
+	id("com.google.devtools.ksp")
+}
+...
+dependecies {
+	implementation("com.github.brunonavarro:DecoradorNullOut:1.0.0-beta5")
+	implementation("com.github.brunonavarro:NullOutLib:1.0.0-beta1")
+	ksp("com.github.brunonavarro:ProcesadorNullOutLib:1.0.0-beta2")
+}
+                    </code>
+                </pre>
+                </div>
+            </section>
+
+            <section id="uso">
+                <h2>Use</h2>
+                <p>Instructions on how to use the project.</p>
+                <p>These generic functions should not be implemented for attributes of data classes that at least do not
+                    They initialize their attributes to null for example:</p>
+
+                <h4 class="incompatible">Not Supported</h4>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
+data class User(
+   val userName: String,
+   val password: String
+)
+                    </code>
+                </pre>
+                </div>
+
+                <h4 class="compatible">Supported</h4>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
+data class User(
+   val userName: String? = null,
+   val password: String? = null
+)
+                    </code>
+                </pre>
+                </div>
+
+                <p>The following interface must be implemented in all data classes:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
+interface WithDefault
+                    </code>
+                </pre>
+                </div>
+
+                <p>In addition, the following annotation must also be added:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
+annotation NullOutEntity
+                    </code>
+                </pre>
+                </div>
+
+                <p>Resulting in the data class:</p>
+                <div class="code-container">
+                    <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                        <code >
+@NullOutEntity
+data class User(
+   val userName: String? = null,
+   val password: String? = null
+): WithDefault
+                    </code>
+                </pre>
+                </div>
+            </section>
+
+            <section id="references">
+                <h2>Functional references</h2>
+                <section id="primitive">
+                    <h3>notNull functions for primitive variables:</h3>
+                    <p>Supported primitive variables are: (String, Int, Double, Boolean)</p>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun String?.getOrDefault(value: String? = null): String
+fun Int?.getOrDefault(value: Int? = null): Int
+fun Double?.getOrDefault(value: Double? = null): Double
+fun Boolean?.getOrDefault(value: Boolean? = null): Boolean
+fun Number?.getOrDefault(value: Number? = null): Boolean</code>
+                        </pre>
+                    </div>
+                    <p>
+                        All these functions are responsible for receiving the real value of the attribute and
+                        If null, it returns a default value,
+                        which can be indicated or failing that they would be:
+                    </p><br>
+                    <p>
+                        String -> “”
+                        Double -> 0.0
+                        Int -> 0
+                        Boolean -> false
+                    </p>
+                </section>
+                <section id="pairMap">
+                    <h3>notNull functions for Pair or Map variables:</h3>
+                    <p>Supported primitive variables are: (String, Int, Double, Boolean)</p>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified A, reified B> Pair<A, B>?.getPairOrDefault(default: Pair<A, B>? = null): Pair<A, B> where A: WithDefault, B: WithDefault
+fun <reified A, reified B> Pair<A, B>?.getPairOrDefault(default: Pair<A, B>? = null): Pair<A, B> where B : Any, A : Any
+fun <reified A, reified B> Pair<A, B?>?.getPairOrDefault(default: Pair<A, B?>? = null): Pair<A, B> where A: WithDefault, B: WithDefault
+fun <reified A, reified B> Pair<A, B?>?.getPairOrDefault(default: Pair<A, B?>? = null): Pair<A, B> where A : Any, B : Any
+fun <reified A, reified B> Pair<A?, B?>?.getPairOrDefault(default: Pair<A?, B?>? = null): Pair<A, B> where A : Any, B : Any
+fun <reified A, reified B> Pair<A?, B?>?.getPairOrDefault(default: Pair<A?, B?>? = null): Pair<A, B> where A : WithDefault, B : WithDefault
+
+fun <reified K: Any, reified V: Any> Map<K, V>?.getMapOrDefault(default: Map<K, V>? = null): Map<K, V>
+fun <reified K, reified V> Map<K, V>?.getMapOrDefault(default: Map<K, V>? = null): Map<K, V> where K: WithDefault, V: WithDefault
+fun <reified K: Any, reified V: Any> Map<K, V?>?.getMapOrDefault(default: Map<K, V?>? = null): Map<K, V>
+fun <reified K, reified V> Map<K, V?>?.getMapOrDefault(default: Map<K, V?>? = null): Map<K, V> where K: WithDefault, V: WithDefault
+fun <reified K: Any, reified V: Any> Map<K?, V?>?.getMapOrDefault(default: Map<K?, V?>? = null): Map<K, V>
+fun <reified K, reified V> Map<K?, V?>?.getMapOrDefault(default: Map<K?, V?>? = null): Map<K, V> where K: WithDefault, V: WithDefault
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        All these functions are responsible for receiving the real value of the attribute and
+                        If any is null, it returns a default value,
+                        which can be indicated or, failing that, an instance is created according to the type of variable.
+                    </p>
+                </section>
+                <section id="object">
+                    <h3>NotNull functions for object variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> T?.getOrDefault(): T where T: WithDefault
+fun <reified T> T?.getOrDefault(): T where T: Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        All these functions are responsible for receiving the real value of the attribute and
+                        If it is null, it returns a default value,
+                        for which an instance is created according to the type of variable.
+                    </p>
+                </section>
+                <section id="array">
+                    <h3>NotNull functions for array variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> Array<T>?.getArrayOrDefault(): Array<T> where T : WithDefault
+fun <reified T> Array<T>?.getArrayOrDefault(): Array<T> where T: Any
+fun <reified T> Array<T?>?.getArrayOrDefault(default: Array<T?> = arrayOf()): Array<T> where T : WithDefault
+fun <reified T> Array<T?>?.getArrayOrDefault(default: Array<T?> = arrayOf()): Array<T> where T: Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        All these functions are responsible for receiving the real value of the attribute and
+                        If null, it returns a default value, for which an empty array is created.
+                    </p>
+                </section>
+                <section id="arrayList">
+                    <h3>NotNull functions for arrayList variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> ArrayList<T>?.getArrayListOrDefault(default: ArrayList<T>? = null): ArrayList<T> where T : WithDefault
+fun <reified T> ArrayList<T>?.getArrayListOrDefault(default: ArrayList<T>? = null): ArrayList<T> where T : Any
+fun <reified T> ArrayList<T?>?.getArrayListOrDefault(default: ArrayList<T?> = arrayListOf()): ArrayList<T> where T : WithDefault
+fun <reified T> ArrayList<T?>?.getArrayListOrDefault(default: ArrayList<T?> = arrayListOf()): ArrayList<T> where T : Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        All these functions are responsible for receiving the real value of the attribute and
+                        If null, it returns a default value, for which an empty arrayList is created.
+                    </p>
+                </section>
+                <section id="list">
+                    <h3>NotNull functions for List variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> List<T>?.getListOrDefault(default: List<T> = emptyList()): List<T> where T : WithDefault
+fun <reified T> List<T?>?.getListOrDefault(default: List<T?> = emptyList()): List<T> where T : WithDefault
+fun <reified T> List<T>?.getListOrDefault(default: List<T> = emptyList()): List<T> where T : Any
+fun <reified T> List<T?>?.getListOrDefault(default: List<T?> = emptyList()): List<T> where T : Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        All these functions are responsible for receiving the real value of the attribute and
+                        If null, it returns a default value, for which an empty List is created.
+                    </p>
+                </section>
+                <section id="mutableList">
+                    <h3>NotNull functions for MutableList variables:</h3>
+                    <div class="code-container">
+                        <pre><button class="btn-copy" onclick="copyToClipboard(event)"></button>
+                            <code >fun <reified T> MutableList<T>?.getMutableListOrDefault(default: MutableList<T> = mutableListOf()): MutableList<T> where T : WithDefault
+fun <reified T> MutableList<T>?.getMutableListOrDefault(default: MutableList<T> = mutableListOf()): MutableList<T> where T : Any
+fun <reified T> MutableList<T?>?.getMutableListOrDefault(default: MutableList<T?> = mutableListOf()): MutableList<T> where T : WithDefault
+fun <reified T> MutableList<T?>?.getMutableListOrDefault(default: MutableList<T?> = mutableListOf()): MutableList<T> where T : Any
+                            </code>
+                        </pre>
+                    </div>
+                    <p>
+                        All these functions are responsible for receiving the real value of the attribute and
+                        If null, it returns a default value, for which an empty mutableList is created.
+                    </p>
+                </section>
+            </section>
+
+            <section id="contribuciones">
+                <h2>Contributions</h2>
+                <p>Guide to contribute to the project.</p>
+                <ul>
+                    <li>Fork the project</li>
+                    <li>Create a new branch (<code
+                            onclick="copyToClipboard(event)"> git checkout -b feature-new </code>)</li>
+                    <li>Make your changes and commit (<code
+                            onclick="copyToClipboard(event)"> git commit -m 'Add new feature' </code>)
+                    </li>
+                    <li>Push the branch (<code
+                            onclick="copyToClipboard(event)"> git push origin feature-new </code>)</li>
+                    <li>Open a Pull Request</li>
+                </ul>
+            </section>
+
+            <section id="licencia">
+                <h2>License</h2>
+                <pre>
+                    MIT License
+
+                    Copyright (c) 2024 Bruno Navarro
+
+                    Permission is hereby granted, free of charge, to any person obtaining a copy
+                    of this software and associated documentation files (the "Software"), to deal
+                    in the Software without restriction, including without limitation the rights
+                    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                    copies of the Software, and to permit persons to whom the Software is
+                    furnished to do so, subject to the following conditions:
+
+                    The above copyright notice and this permission notice shall be included in all
+                    copies or substantial portions of the Software.
+
+                    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                    SOFTWARE.
+                </pre>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 NullOutLib. Todos los derechos reservados.</p>
+    </footer>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-kotlin.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script src="../styles/script.js"></script>
+</body>
+
+</html>
